@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+    <head>
+        <title> first repo on java script and DOM </title>
+    </head>
+
+
+<h2>Hidden things by Venkatesh Vemula</h2>
+
+<form>
+    <label for="Secret_word">Enter the secret word </label>
+    <input type ="password" id="Secret_word" name="Secret_word" value="Secret"> <br>
+
+    <label for="guess">Enter a guess</label>
+    <input type ="text" id="guess" name="guess" autofocus> <br>
+
+    <input type="button" onclick="processGuess()" value="Check the guess">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+<div class="container">
+    <img src="velvet image.PNG" id="img-f" onclick="rotateImage()" width="200px" height ="200px">
+</div>
+<script> 
+var correct=0;
+var wrong=0;
+var currentImage=0;
+function processGuess(){
+    console.log("Check the guess")
+    pass = document.getElementById("Secret_word").value
+    guess = document.getElementById("guess").value
+    
+    
+    out = document.getElementById("result")
+    if(pass == guess){
+        alert("Congratulations")
+        correct+=1
+        out.innerHTML = correct
+    } else {
+        alert("Sorry")
+        wrong+=1
+        out.innerHTML = wrong
+    }
+}
+function rotateImage(){
+    switch (currentImage) {
+            case 0:
+                document.getElementById("img-f").src="velvet image.PNG"
+                currentImage=1;
+                break;
+            case 1:
+            document.getElementById("img-f").src="Egg plant.PNG"
+                currentImage=2;
+                break;
+            case 2:
+            document.getElementById("img-f").src="mango palnt.PNG"
+                currentImage=0;
+                break;
+            default:
+            document.getElementById("img-f").src="velvet image.PNG"
+                currentImage=0;
+                break;
+        }
+}
+
+
+</script>
+  
+ 
+
+</body>
+</html> 
