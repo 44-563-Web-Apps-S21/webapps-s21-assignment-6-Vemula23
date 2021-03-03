@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+<head>
+    <title>Bear Webpage</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<h2>Venkatesh Vemula builds a bear</h2>
+
+<div class="container">
+    <form>
+      <div class="checkbox1">
+        <input type="checkbox" id = "box1_hat" value="hat">
+        <label for = "box1_hat"> hat </label>
+      </div>
+      <div class="checkbox2">
+        <input type="checkbox" id = "box2_scarf" value="scarf">
+        <label for = "box2_scarf"> scarf </label>
+      </div>
+      <div class="checkbox3">
+        <input type="checkbox" id = "box3_shirt" value="shirt">
+        <label for = "box3_shirt">shirt</label>
+      </div>
+      <input type="button" onclick="startbear()" value="Start a bear" class = "btn btn-primary">
+    </form>
+  </div>
+<p id="result">This text will be replaced </p>
+
+<script> 
+var my_bear = {};
+
+function startBear(){
+ my_bear = {};
+  if (document.getElementById("box1_hat").checked){
+    my_bear["hat"] = true;
+  }else{
+    my_bear["hat"] = false;  
+  }if (document.getElementById("box2_scarf").checked){
+    my_bear["scarf"] = true;
+  }else{
+    my_bear["scarf"] = false;
+  }if (document.getElementById("box3_shirt").checked){
+    my_bear["shirt"] = true;
+  }else{
+    my_bear["shirt"] = false;
+  }
+
+  out = document.getElementById("result")
+  my_bear = Json.stringify(my_bear);
+  out.innerHTML = my_bear
+  my_bear = Json.parse(my-bear)
+}
+</script>
+
+</body>
+</html> 
