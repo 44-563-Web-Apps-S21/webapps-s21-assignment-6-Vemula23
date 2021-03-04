@@ -77,18 +77,18 @@ function processRadio(){
     console.log("Getting form values")
     var first = document.getElementById("num11").value
     var second = document.getElementById("num12").value
-    first = set(first)
-    second = set(second)
+    first = Number(first)
+    second = Number(second)
     
     out = document.getElementById("result")
-    if(document.getElementById(plus).checked){
+    if(document.getElementById("plus").checked){
         out.innerHTML = first+second;
-    }else if(document.getElementById(minus).checked){
+    }else if(document.getElementById("minus").checked){
         out.innerHTML = first-second;
-    }else if(document.getElementById(times).checked){
+    }else if(document.getElementById("times").checked){
         out.innerHTML = first*second;
     }else 
-    {(document.getElementById(divide).checked)
+    {(document.getElementById("divide").checked)
         out.innerHTML = first/second;
     }
 }
