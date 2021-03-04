@@ -24,12 +24,22 @@
       <input type="button" onclick="startbear()" value="Start a bear" class = "btn btn-primary">
     </form>
   </div>
-<p id="result">This text will be replaced </p>
-
+<form>
+    <div class="checkbox1">
+      <label for = "box1"> Enter a property </label>
+      <input type="text" id = "box1" value="color"> 
+    </div>
+    <div class="checkbox2">
+      <label for = "box2"> Enter a value </label>
+      <input type="text" id = "box2">
+    </div>
+    <input type="button" onclick="updatebear()" value="Update the bear" class = "btn btn-primary">
+  </form>
+  <p id="result">This text will be replaced </p>
 <script> 
 var my_bear = {};
 
-function startBear(){
+function startbear(){
  my_bear = {};
   if (document.getElementById("box1_hat").checked){
     my_bear["hat"] = true;
@@ -46,9 +56,18 @@ function startBear(){
   }
 
   out = document.getElementById("result")
-  my_bear = Json.stringify(my_bear);
-  out.innerHTML = my_bear
-  my_bear = Json.parse(my-bear)
+  
+  out.innerHTML = JSON.stringify(my_bear);
+  
+}
+function updatebear(){
+    var modify = document.getElementById("box1").value;
+    var values = document.getElementById("box2").value;
+    my_bear[modify] = values;
+    out = document.getElementById("result")
+    
+    out.innerHTML = JSON.stringify(my_bear);
+  
 }
 </script>
 
